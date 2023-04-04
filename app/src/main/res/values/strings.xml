@@ -6,4 +6,9 @@
     <string name="welcome">Welcome,</string>
     <string name="name">Name</string>
     <string name="saurabh_salunke">saurabh salunke</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="already_have_a_account">Already have an account</string>
+    <string name="click_here_for_sign_up">Click here for sign up</string>
+    <string name="forgot_password">forgot password?</string>
 </resources>

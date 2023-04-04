@@ -30,6 +30,12 @@ public class login extends AppCompatActivity {
         pd=new ProgressDialog(login.this);
         pd.setTitle("Authenticating");
         pd.setMessage("please wait...");
+        binding.clickhere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(login.this,signup.class));
+            }
+        });
         binding.loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
