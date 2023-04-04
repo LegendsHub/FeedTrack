@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1011719859143",
+    "project_id": "feedtrack-3f914",
+    "storage_bucket": "feedtrack-3f914.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011719859143:android:8a6427c67253b8e87007e2",
+        "android_client_info": {
+          "package_name": "com.example.feedtrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011719859143-b9pvnm0rlg1thkqk3oitibejvo870hjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAZU72hkHicuycHaaAe24aAuzYP0nnmH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011719859143-b9pvnm0rlg1thkqk3oitibejvo870hjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
