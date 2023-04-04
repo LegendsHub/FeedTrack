@@ -36,6 +36,13 @@ public class login extends AppCompatActivity {
                 startActivity(new Intent(login.this,signup.class));
             }
         });
+        binding.forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(login.this,password.class));
+            }
+        });
+
         binding.loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

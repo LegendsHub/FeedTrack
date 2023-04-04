@@ -11,4 +11,7 @@
     <string name="already_have_a_account">Already have an account</string>
     <string name="click_here_for_sign_up">Click here for sign up</string>
     <string name="forgot_password">forgot password?</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
