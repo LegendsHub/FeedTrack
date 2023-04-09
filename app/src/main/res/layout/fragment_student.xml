@@ -43,7 +43,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
-                android:hint="Username"
+                android:hint="Enter your PRN"
                 android:padding="8dp"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"

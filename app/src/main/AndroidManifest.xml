@@ -12,11 +12,6 @@
         android:theme="@style/Theme.FeedTrack"
         tools:targetApi="31">
         <activity
-            android:name=".password"
-            android:exported="false"
-            android:parentActivityName=".login"
-            />
-        <activity
             android:name=".signup"
             android:exported="false" />
         <activity
