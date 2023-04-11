@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/question1_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="@string/_1_what_was_the_difficulty_level_of_the_exam" />
+
+    <RadioGroup
+        android:id="@+id/difficulty_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:id="@+id/easy_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/easy" />
+
+        <RadioButton
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:id="@+id/medium_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/medium" />
+
+        <RadioButton
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:id="@+id/hard_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hard" />
+    </RadioGroup>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/question2_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/_2_how_much_syllabus_did_the_question_paper_cover" />
+
+   <EditText
+       android:id="@+id/cover"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text=""
+       android:textColor="@color/black"
+       android:textSize="18sp"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/question3_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="3. What suggestions would you like to give?" />
+
+    <EditText
+        android:id="@+id/suggestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:maxLines="5"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:hint="Enter your suggestions here" />
+
+    <Button
+        android:id="@+id/exam_submit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="submit"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_200"
+        app:cornerRadius="20dp"/>
+
+</LinearLayout>

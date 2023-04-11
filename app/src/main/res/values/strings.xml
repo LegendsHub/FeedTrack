@@ -14,4 +14,18 @@
     <string name="old_password">Old Password</string>
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="weekly_feedback">Weekly Feedback</string>
+    <string name="mse_feedback">MSE Feedback</string>
+    <string name="ese_feedback">ESE Feedback</string>
+    <string name="_1_how_many_lectures_were_conducted_this_week">1.How many lectures were conducted this week?</string>
+    <string name="_2_how_would_you_rate_the_instructor_s_teaching_style">2. How would you rate the instructor\'s teaching style?</string>
+    <string name="excellent">Excellent</string>
+    <string name="satisfactory">Satisfactory</string>
+    <string name="poor">Poor</string>
+    <string name="_3_what_suggestions_would_you_like_to_give">3. What suggestions would you like to give?</string>
+    <string name="_2_how_much_syllabus_did_the_question_paper_cover">2. How much syllabus did the question paper cover?</string>
+    <string name="hard">Hard</string>
+    <string name="medium">Medium</string>
+    <string name="easy">Easy</string>
+    <string name="_1_what_was_the_difficulty_level_of_the_exam">1. What was the difficulty level of the exam?</string>
 </resources>
