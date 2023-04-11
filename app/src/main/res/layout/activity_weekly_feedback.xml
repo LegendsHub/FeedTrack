@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".weekly_feedback">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly Feedback"
+        android:textColor="#272222"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/_1_how_many_lectures_were_conducted_this_week"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2"
+    android:layout_marginTop="10dp"
+    >
+    <RadioGroup
+        android:id="@+id/conducted_lectures"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"
+            android:text="All" />
+
+        <RadioButton
+            android:id="@+id/none"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="None" />
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:textSize="20sp"
+        android:layout_marginEnd="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+    <EditText
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter count"
+        android:text=""/>
+</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/_2_how_would_you_rate_the_instructor_s_teaching_style"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:layout_marginTop="10dp"
+        android:id="@+id/instructorSatisfactionRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/excellent"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/excellent" />
+
+        <RadioButton
+            android:id="@+id/satisfied"
+            android:layout_width="147dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:text="@string/satisfactory" />
+
+        <RadioButton
+            android:id="@+id/poor"
+            android:layout_width="109dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:text="@string/poor" />
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/_3_what_suggestions_would_you_like_to_give"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/suggetion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:hint="Enter feedback here" />
+
+    <!--  </androidx.cardview.widget.CardView>  -->
+
+
+    <Button
+        android:id="@+id/submit_weekly"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Submit"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_200"
+        app:cornerRadius="20dp"/>
+</LinearLayout>
+

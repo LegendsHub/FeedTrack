@@ -12,6 +12,15 @@
         android:theme="@style/Theme.FeedTrack"
         tools:targetApi="31">
         <activity
+            android:name=".exam_feedback"
+            android:exported="false" />
+        <activity
+            android:name=".weekly_feedback"
+            android:exported="false" />
+        <activity
+            android:name=".feedback_options"
+            android:exported="false" />
+        <activity
             android:name=".signup"
             android:exported="false" />
         <activity

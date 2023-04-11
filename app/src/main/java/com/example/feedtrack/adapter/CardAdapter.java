@@ -1,5 +1,7 @@
 package com.example.feedtrack.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.feedtrack.MainActivity;
 import com.example.feedtrack.R;
+import com.example.feedtrack.feedback_options;
 import com.example.feedtrack.model.Card;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +21,10 @@ import java.util.List;
 public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Card> cards;
-
-    public CardAdapter(List<Card> cards) {
+    Context ctx;
+    public CardAdapter(List<Card> cards, Context ctx) {
         this.cards = cards;
+        this.ctx=ctx;
     }
 
     @NonNull
@@ -49,6 +54,7 @@ public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             @Override
             public void onClick(View view) {
                 // Handle feedback button click
+                ctx.startActivity(new Intent(ctx, feedback_options.class));
             }
         });
     }

@@ -38,7 +38,7 @@ public class sem5 extends Fragment {
         cards.add(new Card("Card 5", "Description 5", 3, 6));
         cards.add(new Card("Card 6", "Description 6", 4, 9));
 
-        adapter = new CardAdapter(cards);
+        adapter = new CardAdapter(cards,getContext());
         binding.recyclerView.setAdapter(adapter);
 
         return binding.getRoot();
