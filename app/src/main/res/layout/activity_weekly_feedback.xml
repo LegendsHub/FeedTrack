@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Weekly Feedback"
         android:textColor="#272222"
+        android:layout_gravity="center"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -19,20 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/_1_how_many_lectures_were_conducted_this_week"
+        android:text="1.How much did you understand in the last week?"
         android:textColor="#000000"
         android:textSize="18sp" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="2"
-    android:layout_marginTop="10dp"
-    >
     <RadioGroup
-        android:id="@+id/conducted_lectures"
-        android:layout_weight="1"
+        android:id="@+id/understanding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="4"
         android:orientation="horizontal">
 
         <RadioButton
@@ -40,73 +35,120 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:layout_marginEnd="10dp"
-            android:text="All" />
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:text="75-100%" />
 
         <RadioButton
-            android:id="@+id/none"
+            android:id="@+id/most"
             android:layout_width="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="5dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textSize="18sp"
-            android:text="None" />
+            android:text="50-75%" />
+        <RadioButton
+            android:id="@+id/moderate"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="less than 50%" />
     </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="or"
-        android:textSize="20sp"
-        android:layout_marginEnd="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-    <EditText
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter count"
-        android:text=""/>
-</LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/_2_how_would_you_rate_the_instructor_s_teaching_style"
+        android:text="2.Were this week's lectures relevant to the course content"
         android:textColor="#000000"
         android:textSize="18sp" />
 
     <RadioGroup
         android:layout_marginTop="10dp"
-        android:id="@+id/instructorSatisfactionRadioGroup"
+        android:id="@+id/relevance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/excellent"
+            android:id="@+id/yes"
             android:layout_width="123dp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text="@string/excellent" />
+            android:text="Yes" />
 
         <RadioButton
-            android:id="@+id/satisfied"
+            android:id="@+id/somewhat"
             android:layout_width="147dp"
             android:textSize="18sp"
             android:layout_height="wrap_content"
-            android:text="@string/satisfactory" />
+            android:text="Somewhat" />
 
         <RadioButton
-            android:id="@+id/poor"
+            android:id="@+id/no"
             android:layout_width="109dp"
             android:textSize="18sp"
             android:layout_height="wrap_content"
-            android:text="@string/poor" />
+            android:text="No" />
     </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/_3_what_suggestions_would_you_like_to_give"
+        android:text="3.Did you feel engaged and interactive throughout the lectures?"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:layout_marginTop="10dp"
+        android:id="@+id/interactive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/yess"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/somewhatt"
+            android:layout_width="147dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:text="Somewhat" />
+
+        <RadioButton
+            android:id="@+id/noo"
+            android:layout_width="109dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:text="No" />
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="4.Were there any topics you would like to see covered in more detail?"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:hint="Enter topic name"
+        android:inputType="textMultiLine"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="5. What suggestions would you like to give?"
         android:textColor="#000000"
         android:textSize="18sp" />
 
@@ -116,6 +158,7 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:layout_marginTop="10dp"
+        android:inputType="textMultiLine"
         android:hint="Enter feedback here" />
 
     <!--  </androidx.cardview.widget.CardView>  -->

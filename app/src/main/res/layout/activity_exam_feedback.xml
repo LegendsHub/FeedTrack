@@ -7,9 +7,19 @@
     android:padding="16dp">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exam Feedback"
+        android:textColor="#272222"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/question1_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:text="@string/_1_what_was_the_difficulty_level_of_the_exam" />
@@ -26,6 +36,7 @@
             android:id="@+id/easy_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
             android:text="@string/easy" />
 
         <RadioButton
@@ -34,6 +45,7 @@
             android:id="@+id/medium_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
             android:text="@string/medium" />
 
         <RadioButton
@@ -42,6 +54,7 @@
             android:id="@+id/hard_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
             android:text="@string/hard" />
     </RadioGroup>
 
@@ -49,25 +62,139 @@
         android:textColor="@color/black"
         android:id="@+id/question2_text_view"
         android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:text="@string/_2_how_much_syllabus_did_the_question_paper_cover" />
 
-   <EditText
-       android:id="@+id/cover"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text=""
-       android:textColor="@color/black"
-       android:textSize="18sp"/>
+    <RadioGroup
+        android:id="@+id/understanding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:text="90-100%" />
+        <RadioButton
+            android:id="@+id/moderate"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="50-75%" />
+
+        <RadioButton
+            android:id="@+id/none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+
+            android:text="less than 50%"
+            android:textSize="18sp" />
+    </RadioGroup>
 
     <TextView
         android:textColor="@color/black"
         android:id="@+id/question3_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:textSize="18sp"
-        android:text="3. What suggestions would you like to give?" />
+        android:text="3. Do you feel the exam accurately assessed your knowledge and understanding?" />
+
+    <RadioGroup
+        android:id="@+id/knowledge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_marginEnd="7dp"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/moderateee"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="Somewhat" />
+        <RadioButton
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+
+            android:text="No"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/question4_text_view"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="4.Is the course relevant to industry needs?" />
+
+    <RadioGroup
+        android:id="@+id/relevant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/yess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_marginEnd="7dp"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/moderatee"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="Somewhat" />
+        <RadioButton
+            android:id="@+id/noo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+
+            android:text="No"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/question5_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:text="5. What suggestions would you like to give?" />
 
     <EditText
         android:id="@+id/suggestion"
