@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -97,6 +98,8 @@ public class login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             pd.dismiss();
                             if (task.isSuccessful()) {
+                                FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+                                if(user.isEmailVerified()) {
 //                                Intent intent=getIntent();
 //                                String d=intent.getStringExtra("d");
 //                                String u=intent.getStringExtra("u");
@@ -106,7 +109,12 @@ public class login extends AppCompatActivity {
 //                                else if (d.equals("teacher")) {
 //                                    database.getReference().child("Teachers").child(u).child("password").setValue(binding.password.getText().toString());
 //                                }
-                                startActivity(new Intent(login.this, MainActivity.class));
+                                    startActivity(new Intent(login.this, MainActivity.class));
+                                }
+                                else{
+                                    user.sendEmailVerification();
+                                    Toast.makeText(login.this, "Email sent to verification", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
                                 Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
