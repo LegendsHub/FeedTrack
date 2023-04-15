@@ -15,7 +15,7 @@
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp"
         app:cardBackgroundColor="#FFFFFF"
-        android:alpha="0.75"
+        android:alpha="0.85"
         android:background="@drawable/custom_edittext">
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="36dp"
-                android:text="Login"
+                android:text=" Student Login"
                 android:id="@+id/logintext"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -83,6 +83,19 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/purple_200"
                 app:cornerRadius="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Teacher Login"
+                android:textSize="20sp"
+                android:layout_below="@+id/login_card"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/Teacherlogin"
+                android:textAlignment="center"
+                />
+
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

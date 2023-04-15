@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.feedtrack.databinding.ActivityLoginBinding;
+import com.example.feedtrack.databinding.ActivityLoginTBinding;
 import com.example.feedtrack.model.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,43 +22,46 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class login extends AppCompatActivity {
-    ActivityLoginBinding binding;
+public class loginT extends AppCompatActivity {
+    ActivityLoginTBinding binding;
     ProgressDialog pd;
     FirebaseAuth auth;
     FirebaseDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityLoginBinding.inflate(getLayoutInflater());
+        binding=ActivityLoginTBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
         auth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
-        pd=new ProgressDialog(login.this);
+        pd=new ProgressDialog(loginT.this);
         pd.setTitle("Authenticating");
         pd.setMessage("please wait...");
         binding.clickhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(login.this,signup.class));
+                startActivity(new Intent(loginT.this,signup.class));
             }
+
+
         });
 
-
-        binding.Teacherlogin.setOnClickListener(new View.OnClickListener() {
+        binding.Studentlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(login.this,loginT.class));
+                startActivity(new Intent(loginT.this,login.class));
             }
         });
+
+
         binding.forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String str=binding.email.getText().toString();
                 if(TextUtils.isEmpty(str))
                 {
-                    Toast.makeText(login.this,"Email field required to reset password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(loginT.this,"Email field required to reset password", Toast.LENGTH_SHORT).show();
                     binding.email.setError("Email is required");
                     binding.email.requestFocus();
                 }
@@ -70,7 +74,7 @@ public class login extends AppCompatActivity {
                     auth.sendPasswordResetEmail(binding.email.getText().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(login.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(loginT.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -84,12 +88,12 @@ public class login extends AppCompatActivity {
                 String pass=binding.password.getText().toString();
                 if(TextUtils.isEmpty(str))
                 {
-                    Toast.makeText(login.this,"Email field should not be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(loginT.this,"Email field should not be empty", Toast.LENGTH_SHORT).show();
                     binding.email.setError("Email is required");
                     binding.email.requestFocus();
                 }
                 else if(TextUtils.isEmpty(pass)){
-                    Toast.makeText(login.this,"password field should not be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(loginT.this,"password field should not be empty", Toast.LENGTH_SHORT).show();
                     binding.password.setError("Password is required");
                     binding.password.requestFocus();
                 }
@@ -106,9 +110,9 @@ public class login extends AppCompatActivity {
                             pd.dismiss();
                             if (task.isSuccessful()) {
 
-                                startActivity(new Intent(login.this, MainActivity.class));
+                                startActivity(new Intent(loginT.this, TeacherActivity.class));
                             } else {
-                                Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(loginT.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
