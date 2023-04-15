@@ -1,13 +1,18 @@
 package com.example.feedtrack;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
 
 import com.example.feedtrack.databinding.ActivityMainBinding;
 import com.example.feedtrack.fragments.sem4;
@@ -69,5 +74,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Set the retrieved name and PRN number in the corresponding TextViews
         binding.name.setText("Name: "+name);
         binding.welcometxt.setText("Welcome, "+prn);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        MenuBuilder m = (MenuBuilder) menu;
+        //noinspection RestrictedApi
+        m.setOptionalIconsVisible(true);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logout:
+                auth.signOut();
+                startActivity(new Intent(MainActivity.this,login.class));
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
