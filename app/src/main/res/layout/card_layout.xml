@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:elevation="8dp"
-    android:radius="20dp">
+    android:radius="20dp"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

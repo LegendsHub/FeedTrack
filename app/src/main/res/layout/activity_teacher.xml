@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".TeacherActivity">
+
+    <!-- Image at the top of the page -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/defaultuser"
+        />
+
+    <!-- Section displaying user information -->
+    <RelativeLayout
+        android:id="@+id/userInfoSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView">
+
+
+
+        <!-- PRN no. -->
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/mailid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Mail Id"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:layout_below="@id/mailid"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+
+    <!-- Dropdown menu for semester selection -->
+    <Spinner
+        android:id="@+id/semesterSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userInfoSection"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/semester_options" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/semesterSpinner"/>
+
+
+</RelativeLayout>
+
+
+
