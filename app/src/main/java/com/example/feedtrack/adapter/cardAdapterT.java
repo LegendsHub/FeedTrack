@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,17 +16,20 @@ import com.example.feedtrack.R;
 import com.example.feedtrack.model.cardT;
 import com.example.feedtrack.prn_list;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 
 public class cardAdapterT extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<cardT> cards;
+    ArrayList<cardT> cards;
+    String sem;
     Context ctx;
-    public cardAdapterT(List<cardT> cards,Context ctx) {
+    public cardAdapterT(ArrayList<cardT> cards,Context ctx,String sem) {
         this.ctx=ctx;
         this.cards = cards;
+        this.sem=sem;
     }
 
     @NonNull
@@ -37,18 +41,21 @@ public class cardAdapterT extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        cardT card = cards.get(position);
+        cardT c=cards.get(position);
         TextView titleTextView = holder.itemView.findViewById(R.id.titleTextView);
         Button TeacherFeedbackBtn = holder.itemView.findViewById(R.id.TeacherFeedbackBtn);
         Button attendance = holder.itemView.findViewById(R.id.TeacherAttendenceBtn);
-
-        titleTextView.setText(card.getTitle());
+        String sub=c.getTitle();
+        titleTextView.setText(sub);
 //
         attendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Handle feedback button click
-                    ctx.startActivity(new Intent(ctx, prn_list.class));
+                Intent intent=new Intent(ctx, prn_list.class);
+                intent.putExtra("sub",sub);
+                intent.putExtra("sem",sem);
+                ctx.startActivity(intent);
 
             }
         });
@@ -63,7 +70,7 @@ public class cardAdapterT extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return cards.size();
+        return  cards == null ? 0 : cards.size();
+
     }
 }
-

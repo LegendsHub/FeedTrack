@@ -37,7 +37,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         database=FirebaseDatabase.getInstance();
         binding.semesterSpinner.setOnItemSelectedListener(this);
         // Make API call to retrieve user's name and PRN number
-        getUserInfo();
+        Intent intent=getIntent();
+        String email=intent.getStringExtra("email");
+        String prn=intent.getStringExtra("prn");
+        getUserInfo(email,prn);
     }
 
     @Override
@@ -65,14 +68,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Do nothing
     }
 
-    private void getUserInfo() {
+    private void getUserInfo(String email,String prn) {
         // Make API call to retrieve user's name and PRN number
         // Replace the following with your backend API call implementation
-        String name = "Saurabh Salunke";
-        String prn = "22620002";
 
         // Set the retrieved name and PRN number in the corresponding TextViews
-        binding.name.setText("Name: "+name);
+        binding.name.setText("Email: "+email);
         binding.welcometxt.setText("Welcome, "+prn);
     }
     @Override

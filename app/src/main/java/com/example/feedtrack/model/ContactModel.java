@@ -8,4 +8,13 @@ public class ContactModel
     {
         this.prn=prn;
     }
+    public ContactModel(){}
+
+    public String getPrn() {
+        return prn;
+    }
+
+    public void setPrn(String prn) {
+        this.prn = prn;
+    }
 }
