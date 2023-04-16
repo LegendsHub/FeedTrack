@@ -107,25 +107,19 @@ public class login extends AppCompatActivity {
                             pd.dismiss();
                             if (task.isSuccessful()) {
 
-                                FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-                                if(user.isEmailVerified()) {
-//                                Intent intent=getIntent();
-//                                String d=intent.getStringExtra("d");
-//                                String u=intent.getStringExtra("u");
-//                                if(d.equals("student")){
-//                                    database.getReference().child("Students").child(u).child("password").setValue(binding.password.getText().toString());
+//                                FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+//                                if(user.isEmailVerified()) {
+                                    Intent intent=new Intent(login.this, MainActivity.class);
+                                    intent.putExtra("email",binding.email.getText().toString().trim());
+                                    intent.putExtra("prn",binding.password.getText().toString().trim());
+                                    startActivity(intent);
 //                                }
-//                                else if (d.equals("teacher")) {
-//                                    database.getReference().child("Teachers").child(u).child("password").setValue(binding.password.getText().toString());
+//                                else{
+//                                    user.sendEmailVerification();
+//                                    Toast.makeText(login.this, "Email sent to verification", Toast.LENGTH_SHORT).show();
 //                                }
-                                    startActivity(new Intent(login.this, MainActivity.class));
-                                }
-                                else{
-                                    user.sendEmailVerification();
-                                    Toast.makeText(login.this, "Email sent to verification", Toast.LENGTH_SHORT).show();
-                                }
-
-                                startActivity(new Intent(login.this, MainActivity.class));
+//
+//                                startActivity(new Intent(login.this, MainActivity.class));
 
                             } else {
                                 Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

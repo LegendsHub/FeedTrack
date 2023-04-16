@@ -102,20 +102,25 @@ public class loginT extends AppCompatActivity {
                     binding.email.setError("enter valid email");
                     binding.email.requestFocus();
                 }
-                else {
+                else if(str.equals("mayur.rathi@walchandsangli.ac.in")||str.equals("prashant.kharat@walchandsangli.ac.in")) {
                     pd.show();
                     auth.signInWithEmailAndPassword(binding.email.getText().toString(), binding.password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             pd.dismiss();
                             if (task.isSuccessful()) {
-
-                                startActivity(new Intent(loginT.this, TeacherActivity.class));
+                                Intent intent=new Intent(loginT.this, TeacherActivity.class);
+                                intent.putExtra("email",binding.email.getText().toString().trim());
+                                intent.putExtra("password",binding.password.getText().toString());
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(loginT.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
+                }
+                else{
+                    Toast.makeText(loginT.this, "User is not authorized", Toast.LENGTH_SHORT).show();
                 }
             }
         });

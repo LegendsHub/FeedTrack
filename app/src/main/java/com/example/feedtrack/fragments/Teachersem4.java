@@ -1,6 +1,7 @@
 package com.example.feedtrack.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,15 @@ import com.example.feedtrack.R;
 import com.example.feedtrack.adapter.cardAdapterT;
 import com.example.feedtrack.databinding.FragmentStudentBinding;
 import com.example.feedtrack.databinding.FragmentTeachersem4Binding;
+import com.example.feedtrack.model.ContactModel;
 import com.example.feedtrack.model.cardT;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -23,7 +32,8 @@ public class Teachersem4 extends Fragment {
     FragmentTeachersem4Binding binding;
     private RecyclerView recyclerView;
     private cardAdapterT adapter;
-    private ArrayList<cardT> cards;
+    DatabaseReference db;
+    ArrayList<cardT> cards;
 
     @Nullable
     @Override
@@ -31,16 +41,31 @@ public class Teachersem4 extends Fragment {
         binding = FragmentTeachersem4Binding.inflate(inflater, container, false);
         binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        db=FirebaseDatabase.getInstance().getReference("Teachers").child(this.getArguments().getString("uname"));
         cards = new ArrayList<>();
-        cards.add(new cardT("Card sem4 "));
-        cards.add(new cardT("Card 2 sem 4"));
-        cards.add(new cardT("Card 3 sem 4"));
-        cards.add(new cardT("Card 4"));
-        cards.add(new cardT("Card 5"));
-        cards.add(new cardT("Card 6"));
+//        cards.add(new cardT("Card sem4 "));
+//        cards.add(new cardT("Card 2 sem 4"));
+//        cards.add(new cardT("Card 3 sem 4"));
+//        cards.add(new cardT("Card 4"));
+//        cards.add(new cardT("Card 5"));
+//        cards.add(new cardT("Card 6"));
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                 cardT c=snapshot.getValue(cardT.class);
+                    c.setTitle(snapshot.child("sub").child("fourth").getValue().toString());
+                    cards.add(c);
 
-        adapter = new cardAdapterT(cards,getContext());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        adapter = new cardAdapterT(cards,getContext(),"fourth");
         binding.recyclerView.setAdapter(adapter);
 
         return binding.getRoot();
