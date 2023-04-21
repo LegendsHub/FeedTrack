@@ -9,8 +9,10 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:src="@drawable/defaultuser"
+        android:layout_height="70dp"
+
+        android:src="@drawable/teacher"
+        android:layout_centerHorizontal="true"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
         />
 
@@ -27,11 +29,21 @@
 
         <!-- Name -->
         <TextView
-            android:id="@+id/mailid"
+            android:id="@+id/mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Mail Id"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/mailid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text=""
+            android:layout_below="@+id/mail"
             android:textSize="18sp"
             android:layout_centerHorizontal="true"
             />

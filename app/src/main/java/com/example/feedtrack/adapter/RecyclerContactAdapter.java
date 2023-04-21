@@ -2,6 +2,7 @@ package com.example.feedtrack.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -76,6 +77,9 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
         });
     }
 
+
+
+
     public void add(DataSnapshot snapshot, DatabaseReference db) {
         Integer a = snapshot.getValue(Integer.class);
         int attended = a + 1;
@@ -93,6 +97,7 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
                     }
                 });
     }
+
 
     @Override
     public int getItemCount() {

@@ -99,6 +99,9 @@ public class login extends AppCompatActivity {
                     binding.email.setError("enter valid email");
                     binding.email.requestFocus();
                 }
+                else if(str.equals("mayur.rathi@walchandsangli.ac.in")||str.equals("prashant.kharat@walchandsangli.ac.in")||str.equals("shefali.sonavane@walchandsangli.ac.in")||str.equals("manisha.dabde@walchandsangli.ac.in")) {
+                    Toast.makeText(login.this, "Access Denied...", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     pd.show();
                     auth.signInWithEmailAndPassword(binding.email.getText().toString(), binding.password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

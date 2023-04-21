@@ -1,11 +1,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:elevation="8dp"
     android:radius="20dp"
+    app:cardBackgroundColor="@color/Aquamarine_light"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -63,7 +65,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:text="Feedback" />
+                android:text="Feedback"
+                android:textColor="@color/white"
+                android:background="@color/aqua_green"/>
 
         </RelativeLayout>
 

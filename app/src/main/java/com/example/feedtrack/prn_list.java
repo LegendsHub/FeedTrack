@@ -42,6 +42,7 @@ ActivityPrnListBinding binding;
         db.getReference("Students").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                arrcontacts.clear();
                 for(DataSnapshot snapshot1:snapshot.getChildren()){
                     ContactModel c=snapshot1.getValue(ContactModel.class);
                     c.setPrn(String.valueOf(snapshot1.child("user_name").getValue()));

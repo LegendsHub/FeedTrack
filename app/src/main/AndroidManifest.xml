@@ -14,7 +14,6 @@
         <activity
             android:name=".prn_list"
             android:exported="false"
-            android:parentActivityName=".TeacherActivity"
             />
         <activity
             android:name=".loginT"
@@ -34,7 +33,6 @@
         <activity
             android:name=".feedback_options"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
             />
         <activity
             android:name=".signup"

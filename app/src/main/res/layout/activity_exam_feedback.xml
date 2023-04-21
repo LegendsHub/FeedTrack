@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/Aquamarine_light">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exam Feedback"
-        android:textColor="#272222"
+        android:textColor="@color/dark_green"
         android:layout_gravity="center"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -22,7 +23,8 @@
         android:layout_marginTop="16dp"
         android:textSize="18sp"
         android:textColor="@color/black"
-        android:text="@string/_1_what_was_the_difficulty_level_of_the_exam" />
+        android:text="@string/_1_what_was_the_difficulty_level_of_the_exam"
+        android:textStyle="bold"/>
 
     <RadioGroup
         android:id="@+id/difficulty_radio_group"
@@ -65,7 +67,8 @@
         android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:text="@string/_2_how_much_syllabus_did_the_question_paper_cover" />
+        android:text="@string/_2_how_much_syllabus_did_the_question_paper_cover"
+        android:textStyle="bold"/>
 
     <RadioGroup
         android:id="@+id/understanding"
@@ -108,7 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
-        android:text="3. Do you feel the exam accurately assessed your knowledge and understanding?" />
+        android:text="3. Do you feel the exam accurately assessed your knowledge and understanding?"
+        android:textStyle="bold"/>
 
     <RadioGroup
         android:id="@+id/knowledge"
@@ -151,7 +155,8 @@
         android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:text="4.Is the course relevant to industry needs?" />
+        android:text="4.Is the course relevant to industry needs?"
+        android:textStyle="bold"/>
 
     <RadioGroup
         android:id="@+id/relevant"
@@ -194,7 +199,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
-        android:text="5. What suggestions would you like to give?" />
+        android:text="5. What suggestions would you like to give?"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/suggestion"
@@ -214,7 +220,7 @@
         android:text="submit"
         android:textSize="18dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="@color/aqua_green"
         app:cornerRadius="20dp"/>
 
 </LinearLayout>
