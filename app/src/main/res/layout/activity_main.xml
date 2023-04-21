@@ -9,8 +9,9 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/defaultuser"
-        android:id="@+id/userimg"/>
+        android:src="@drawable/student"
+        android:id="@+id/userimg"
+        android:layout_marginTop="5dp"/>
 
     <!-- Section displaying user information -->
     <RelativeLayout
@@ -34,13 +35,23 @@
                 android:layout_centerHorizontal="true"
                 />
             <TextView
+                android:id="@+id/em"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: "
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:layout_below="@+id/welcometxt"
+                android:layout_centerHorizontal="true"
+                />
+        <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textSize="18sp"
                 android:padding="8dp"
-                android:layout_below="@+id/welcometxt"
+                android:layout_below="@+id/em"
                 android:layout_centerHorizontal="true"
                 />
 
@@ -53,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/userInfoSection"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:entries="@array/semester_options" />
 

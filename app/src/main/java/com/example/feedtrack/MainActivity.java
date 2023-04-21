@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.feedtrack.databinding.ActivityMainBinding;
 import com.example.feedtrack.fragments.sem4;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
    ActivityMainBinding binding;
     FirebaseAuth auth;
     FirebaseDatabase database;
+    String prn,email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         binding.semesterSpinner.setOnItemSelectedListener(this);
         // Make API call to retrieve user's name and PRN number
         Intent intent=getIntent();
-        String email=intent.getStringExtra("email");
-        String prn=intent.getStringExtra("prn");
+        email=intent.getStringExtra("email");
+        prn=intent.getStringExtra("prn");
         getUserInfo(email,prn);
     }
 
@@ -47,18 +49,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                // Redirect to Semester 4 Fragment
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new sem4())
-                        .addToBackStack(null)
-                        .commit();
+                FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+                Bundle bundle=new Bundle();
+                bundle.putString("prn",prn);
+                sem4 sem4=new sem4();
+                sem4.setArguments(bundle);
+                transaction.replace(R.id.fragment_container, sem4).commit();
                 break;
             case 1:
-                // Redirect to Semester 5 Fragment
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new sem5())
-                        .addToBackStack(null)
-                        .commit();
+                FragmentTransaction trans=getSupportFragmentManager().beginTransaction();
+                Bundle bun=new Bundle();
+                bun.putString("prn",prn);
+                sem5 sem5=new sem5();
+                sem5.setArguments(bun);
+                trans.replace(R.id.fragment_container, sem5).commit();
                 break;
         }
     }
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Replace the following with your backend API call implementation
 
         // Set the retrieved name and PRN number in the corresponding TextViews
-        binding.name.setText("Email: "+email);
+        binding.name.setText(email);
         binding.welcometxt.setText("Welcome, "+prn);
     }
     @Override

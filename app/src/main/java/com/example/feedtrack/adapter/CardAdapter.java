@@ -47,7 +47,7 @@ public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         titleTextView.setText(card.getTitle());
         descriptionTextView.setText(card.getDescription());
         lecturesPresentTextView.setText("Lectures Present: " + card.getLecturesPresent());
-        lecturesConductedTextView.setText("Lectures Conducted: " + card.getLecturesConducted());
+        lecturesConductedTextView.setText("Lectures Conducted: " + card.getConducted());
         Percentages.setText("Percentages:"+card.getPercentages()+"%");
 
         feedbackButton.setOnClickListener(new View.OnClickListener() {

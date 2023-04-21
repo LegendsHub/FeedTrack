@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="aqua_green">#0FE593</color>
+    <color name="aqua_green_dark">#0FC781</color>
+    <color name="Aquamarine">#7fffd4</color>
+    <color name="Aquamarine_light">#E6FCF6</color>
+    <color name="dark_green">#1D5B2D</color>
 </resources>

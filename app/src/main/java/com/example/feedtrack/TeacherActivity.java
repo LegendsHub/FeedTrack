@@ -72,7 +72,7 @@ public class TeacherActivity extends AppCompatActivity implements AdapterView.On
 
         // Set the retrieved name and PRN number in the corresponding TextViews
         binding.txtName.setText("Name: "+name);
-        binding.mailid.setText("Email: "+mail);
+        binding.mailid.setText(mail);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

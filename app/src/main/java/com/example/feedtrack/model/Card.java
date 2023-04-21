@@ -14,6 +14,7 @@ public class Card {
         this.lecturesConducted = lecturesConducted;
         this.percentages=(int) (((float)lecturesPresent / lecturesConducted) * 100);
     }
+    public  Card(){}
 
     public String getTitle() {
         return title;
@@ -27,11 +28,31 @@ public class Card {
         return lecturesPresent;
     }
 
-    public int getLecturesConducted() {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLecturesPresent(int lecturesPresent) {
+        this.lecturesPresent = lecturesPresent;
+    }
+
+    public void setConducted(int lecturesConducted) {
+        this.lecturesConducted = lecturesConducted;
+    }
+
+    public void setPercentages(int percentages) {
+        this.percentages = percentages;
+    }
+
+    public int getConducted() {
         return lecturesConducted;
     }
     public int getPercentages() {
-        return percentages;
+        return (int) (((float)lecturesPresent / lecturesConducted) * 100);
     }
 
 

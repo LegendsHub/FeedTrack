@@ -1,21 +1,23 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".login"
-    android:background="@drawable/attendance">
+    >
     <androidx.cardview.widget.CardView
         android:id="@+id/login_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        app:cardBackgroundColor="#FFFFFF"
-        android:alpha="0.85"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/Aquamarine_light"
+        android:alpha="1"
         android:background="@drawable/custom_edittext">
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,18 +27,20 @@
             android:padding="24dp"
             android:background="#90FFFFFF"
             >
+
             <TextView
+                android:id="@+id/logintext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36dp"
                 android:text=" Student Login"
-                android:id="@+id/logintext"
                 android:textAlignment="center"
+                android:textColor="@color/aqua_green_dark"
+                android:textSize="33dp"
                 android:textStyle="bold"
-                android:textColor="@color/purple_200"
 
 
                 />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -49,7 +53,7 @@
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="15dp"
                 />
             <EditText
                 android:layout_width="match_parent"
@@ -70,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:id="@+id/forgot"
-                android:text="@string/forgot_password"
+                android:text="Forgot password?"
                 android:layout_gravity="end"
                 android:layout_marginTop="5dp"
                 />
@@ -81,8 +85,8 @@
                 android:text="Login"
                 android:textSize="18dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/purple_200"
-                app:cornerRadius="20dp"/>
+                android:backgroundTint="@color/aqua_green"
+                app:cornerRadius="10dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
