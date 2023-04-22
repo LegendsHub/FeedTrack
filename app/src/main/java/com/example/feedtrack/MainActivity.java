@@ -1,6 +1,9 @@
 package com.example.feedtrack;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -95,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case R.id.logout:
                 auth.signOut();
                 startActivity(new Intent(MainActivity.this,login.class));
+                finish();
+
 
         }
         return super.onOptionsItemSelected(item);

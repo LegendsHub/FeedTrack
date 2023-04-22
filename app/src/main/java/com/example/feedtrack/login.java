@@ -83,6 +83,10 @@ public class login extends AppCompatActivity {
             public void onClick(View v) {
                 String str=binding.email.getText().toString();
                 String pass=binding.password.getText().toString();
+                Intent intent=new Intent(login.this, MainActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("email",binding.email.getText().toString().trim());
+                intent.putExtra("prn",binding.password.getText().toString().trim());
                 if(TextUtils.isEmpty(str))
                 {
                     Toast.makeText(login.this,"Email field should not be empty", Toast.LENGTH_SHORT).show();
@@ -112,9 +116,6 @@ public class login extends AppCompatActivity {
 
 //                                FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
 //                                if(user.isEmailVerified()) {
-                                    Intent intent=new Intent(login.this, MainActivity.class);
-                                    intent.putExtra("email",binding.email.getText().toString().trim());
-                                    intent.putExtra("prn",binding.password.getText().toString().trim());
                                     startActivity(intent);
 //                                }
 //                                else{
