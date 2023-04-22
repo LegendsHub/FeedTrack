@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"/>
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,19 +22,21 @@
             />
         <activity
             android:name=".loginT"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".TeacherActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".exam_feedback"
             android:exported="false"
-            android:parentActivityName=".feedback_options"
             />
         <activity
             android:name=".weekly_feedback"
             android:parentActivityName=".feedback_options"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".feedback_options"
             android:exported="false"
@@ -39,7 +46,9 @@
             android:exported="false" />
         <activity
             android:name=".login"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="false"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +57,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
     </application>
 
 </manifest>

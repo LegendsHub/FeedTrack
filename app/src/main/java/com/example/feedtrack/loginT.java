@@ -86,6 +86,10 @@ public class loginT extends AppCompatActivity {
             public void onClick(View v) {
                 String str=binding.email.getText().toString();
                 String pass=binding.password.getText().toString();
+                Intent intent=new Intent(loginT.this, TeacherActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("email",binding.email.getText().toString().trim());
+                intent.putExtra("password",binding.password.getText().toString());
                 if(TextUtils.isEmpty(str))
                 {
                     Toast.makeText(loginT.this,"Email field should not be empty", Toast.LENGTH_SHORT).show();
@@ -109,9 +113,6 @@ public class loginT extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             pd.dismiss();
                             if (task.isSuccessful()) {
-                                Intent intent=new Intent(loginT.this, TeacherActivity.class);
-                                intent.putExtra("email",binding.email.getText().toString().trim());
-                                intent.putExtra("password",binding.password.getText().toString());
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(loginT.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

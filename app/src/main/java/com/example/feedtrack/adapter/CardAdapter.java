@@ -54,7 +54,9 @@ public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             @Override
             public void onClick(View view) {
                 // Handle feedback button click
-                ctx.startActivity(new Intent(ctx, feedback_options.class));
+                Intent intent=new Intent(ctx, feedback_options.class);
+                intent.putExtra("sub",card.getTitle());
+                ctx.startActivity(intent);
             }
         });
     }

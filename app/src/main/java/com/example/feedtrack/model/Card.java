@@ -1,3 +1,4 @@
+
 package com.example.feedtrack.model;
 
 public class Card {
