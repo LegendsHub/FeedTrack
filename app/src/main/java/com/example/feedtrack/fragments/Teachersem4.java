@@ -43,17 +43,11 @@ public class Teachersem4 extends Fragment {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         db=FirebaseDatabase.getInstance().getReference("Teachers").child(this.getArguments().getString("uname"));
         cards = new ArrayList<>();
-//        cards.add(new cardT("Card sem4 "));
-//        cards.add(new cardT("Card 2 sem 4"));
-//        cards.add(new cardT("Card 3 sem 4"));
-//        cards.add(new cardT("Card 4"));
-//        cards.add(new cardT("Card 5"));
-//        cards.add(new cardT("Card 6"));
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                  cardT c=snapshot.getValue(cardT.class);
-                    c.setTitle(snapshot.child("sub").child("fourth").getValue().toString());
+                    c.setTitle(snapshot.child("sub").child("fourth").getValue(String.class));
                     cards.add(c);
 
                 adapter.notifyDataSetChanged();

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.feedtrack.R;
+import com.example.feedtrack.feedback_options_t;
 import com.example.feedtrack.model.cardT;
 import com.example.feedtrack.prn_list;
 
@@ -66,6 +67,9 @@ public class cardAdapterT extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             @Override
             public void onClick(View view) {
                 // Handle feedback button click
+                Intent intent=new Intent(ctx, feedback_options_t.class);
+                intent.putExtra("sub",sub);
+                ctx.startActivity(intent);
             }
         });
     }

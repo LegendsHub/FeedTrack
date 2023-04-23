@@ -21,10 +21,13 @@ import java.util.List;
 public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Card> cards;
+    String prn,sem;
     Context ctx;
-    public CardAdapter(List<Card> cards, Context ctx) {
+    public CardAdapter(List<Card> cards, Context ctx,String prn,String sem) {
         this.cards = cards;
         this.ctx=ctx;
+        this.prn=prn;
+        this.sem=sem;
     }
 
     @NonNull
@@ -56,6 +59,8 @@ public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 // Handle feedback button click
                 Intent intent=new Intent(ctx, feedback_options.class);
                 intent.putExtra("sub",card.getTitle());
+                intent.putExtra("prn",prn);
+                intent.putExtra("sem",sem);
                 ctx.startActivity(intent);
             }
         });

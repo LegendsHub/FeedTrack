@@ -80,7 +80,7 @@ public class sem4 extends Fragment {
             }
         });
 
-        adapter = new CardAdapter(cards,getContext());
+        adapter = new CardAdapter(cards,getContext(),prn,"fourth");
         binding.recyclerView.setAdapter(adapter);
 
         return binding.getRoot();

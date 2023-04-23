@@ -87,11 +87,11 @@ public class TeacherActivity extends AppCompatActivity implements AdapterView.On
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int con=snapshot.getValue(Integer.class);
                             at.setConducted(con);
-                            try {
-                                at.setPercentage(at.getPercentage());
-                            } catch (Exception e) {
-                                at.setPercentage(0);
-                            }
+//                            try {
+//                                at.setPercentage(at.getPercentage());
+//                            } catch (Exception e) {
+//                                at.setPercentage(0);
+//                            }
                         }
 
                         @Override
@@ -189,7 +189,7 @@ public class TeacherActivity extends AppCompatActivity implements AdapterView.On
                         table.addCell(data.getPrn());
                         table.addCell(String.valueOf(data.getAttended()));
                         table.addCell(String.valueOf(data.getConducted()));
-                        table.addCell(String.valueOf(data.getPercentage()));
+                        table.addCell(String.valueOf((int)(data.getAttended()/data.getConducted())*100));
                     }
 
                     // add the table to the document

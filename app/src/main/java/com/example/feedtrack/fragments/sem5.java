@@ -81,7 +81,7 @@ public class sem5 extends Fragment {
             }
         });
 
-        adapter = new CardAdapter(cards,getContext());
+        adapter = new CardAdapter(cards,getContext(),prn,"fifth");
         binding.recyclerView.setAdapter(adapter);
 
         return binding.getRoot();

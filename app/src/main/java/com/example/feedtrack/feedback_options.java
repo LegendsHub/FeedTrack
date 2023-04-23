@@ -25,10 +25,16 @@ FirebaseDatabase db;
         db=FirebaseDatabase.getInstance();
         Intent i=getIntent();
         String sub=i.getStringExtra("sub");
+        String prn=i.getStringExtra("prn");
+        String sem=i.getStringExtra("sem");
         binding.weekly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(feedback_options.this,weekly_feedback.class));
+                Intent i=new Intent(feedback_options.this,weekly_feedback.class);
+                i.putExtra("sub",sub);
+                i.putExtra("prn",prn);
+                i.putExtra("sem",sem);
+                startActivity(i);
             }
         });
         db.getReference("feedback").child("sub").child(sub).child("eseenabled").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -42,7 +48,12 @@ FirebaseDatabase db;
                                 Toast.makeText(feedback_options.this, "ESE Feedback is not enabled", Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                startActivity(new Intent(feedback_options.this, exam_feedback.class));
+                                Intent i=new Intent(feedback_options.this, exam_feedback.class);
+                                i.putExtra("sub",sub);
+                                i.putExtra("prn",prn);
+                                i.putExtra("sem",sem);
+                                i.putExtra("type","ese");
+                                startActivity(i);
                             }
                         }
                     });
@@ -65,7 +76,12 @@ FirebaseDatabase db;
                                 Toast.makeText(feedback_options.this, "MSE Feedback is not enabled", Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                startActivity(new Intent(feedback_options.this, exam_feedback.class));
+                                Intent i=new Intent(feedback_options.this, exam_feedback.class);
+                                i.putExtra("sub",sub);
+                                i.putExtra("prn",prn);
+                                i.putExtra("sem",sem);
+                                i.putExtra("type","mse");
+                                startActivity(i);
                             }
                         }
                     });
