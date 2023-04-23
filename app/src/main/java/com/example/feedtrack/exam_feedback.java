@@ -20,6 +20,7 @@ DatabaseReference db;
         super.onCreate(savedInstanceState);
         binding=ActivityExamFeedbackBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
         Intent i=getIntent();
         String prn=i.getStringExtra("prn");
         String sem=i.getStringExtra("sem");
@@ -48,6 +49,12 @@ DatabaseReference db;
                     db.child("Is the course relevant to industry needs?").setValue(ans4);
                     db.child("What suggestions would you like to give?").setValue(ans5);
                     db.child("What was the difficulty level of the exam?").setValue(ans1);
+                    Toast.makeText(exam_feedback.this, "Response Submitted...", Toast.LENGTH_SHORT).show();
+                    binding.suggestion.setText("");
+                    rb.setSelected(false);
+                    rb1.setSelected(false);
+                    rb2.setSelected(false);
+                    rb3.setSelected(false);
                 }
             }});
 

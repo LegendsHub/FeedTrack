@@ -38,19 +38,13 @@ public class loginT extends AppCompatActivity {
         pd=new ProgressDialog(loginT.this);
         pd.setTitle("Authenticating");
         pd.setMessage("please wait...");
-        binding.clickhere.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(loginT.this,signup.class));
-            }
 
-
-        });
 
         binding.Studentlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(loginT.this,login.class));
+                finish();
             }
         });
 
@@ -114,6 +108,7 @@ public class loginT extends AppCompatActivity {
                             pd.dismiss();
                             if (task.isSuccessful()) {
                                 startActivity(intent);
+                                finish();
                             } else {
                                 Toast.makeText(loginT.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

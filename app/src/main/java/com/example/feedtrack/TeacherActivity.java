@@ -178,18 +178,16 @@ public class TeacherActivity extends AppCompatActivity implements AdapterView.On
                     document.open();
 
                     // create a table to display the attendance data
-                    PdfPTable table = new PdfPTable(4);
+                    PdfPTable table = new PdfPTable(3);
                     table.addCell("PRN");
                     table.addCell("Lectures Present");
                     table.addCell("Lectures Conducted");
-                    table.addCell("Percentage");
 
                     // add data to the table
                     for (attendance data : c) {
                         table.addCell(data.getPrn());
                         table.addCell(String.valueOf(data.getAttended()));
                         table.addCell(String.valueOf(data.getConducted()));
-                        table.addCell(String.valueOf((int)(data.getAttended()/data.getConducted())*100));
                     }
 
                     // add the table to the document

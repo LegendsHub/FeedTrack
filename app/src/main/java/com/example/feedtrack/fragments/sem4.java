@@ -42,6 +42,7 @@ public class sem4 extends Fragment {
         db.getReference("Students").child(prn).child("fourth").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                cards.clear();
                 for(DataSnapshot snapshot1:snapshot.getChildren()) {
                     Card c=snapshot1.getValue(Card.class);
                     String sub=String.valueOf(snapshot1.getKey());

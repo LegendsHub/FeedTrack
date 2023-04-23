@@ -24,6 +24,7 @@ DatabaseReference db;
         super.onCreate(savedInstanceState);
         binding=ActivityWeeklyFeedbackBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
         Intent i=getIntent();
         String prn=i.getStringExtra("prn");
         String sem=i.getStringExtra("sem");
@@ -50,6 +51,12 @@ DatabaseReference db;
                     db.child("Did you feel engaged and interactive throughout the lecture?").setValue(ans3);
                     db.child("Were there any topics you would like to see covered in more detail?").setValue(ans4);
                     db.child("What suggestions would you like to give?").setValue(ans5);
+                    Toast.makeText(weekly_feedback.this, "Response Submitted...", Toast.LENGTH_SHORT).show();
+                    binding.detail.setText("");
+                    binding.suggetion.setText("");
+                    rb2.setSelected(false);
+                    rb.setSelected(false);
+                    rb2.setSelected(false);
                 }
             }});
 

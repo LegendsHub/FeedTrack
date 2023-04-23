@@ -22,6 +22,7 @@ FirebaseDatabase db;
         super.onCreate(savedInstanceState);
         binding=ActivityFeedbackOptionsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
         db=FirebaseDatabase.getInstance();
         Intent i=getIntent();
         String sub=i.getStringExtra("sub");

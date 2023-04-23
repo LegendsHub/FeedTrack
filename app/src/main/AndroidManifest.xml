@@ -41,9 +41,6 @@
             android:name=".feedback_options"
             android:exported="false" />
         <activity
-            android:name=".signup"
-            android:exported="false" />
-        <activity
             android:name=".login"
             android:exported="true"
             android:noHistory="false">
