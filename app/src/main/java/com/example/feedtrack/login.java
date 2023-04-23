@@ -38,18 +38,14 @@ public class login extends AppCompatActivity {
         pd=new ProgressDialog(login.this);
         pd.setTitle("Authenticating");
         pd.setMessage("please wait...");
-        binding.clickhere.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(login.this,signup.class));
-            }
-        });
+
 
 
         binding.Teacherlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(login.this,loginT.class));
+                finish();
             }
         });
         binding.forgot.setOnClickListener(new View.OnClickListener() {
@@ -113,18 +109,8 @@ public class login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             pd.dismiss();
                             if (task.isSuccessful()) {
-
-//                                FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-//                                if(user.isEmailVerified()) {
                                     startActivity(intent);
-//                                }
-//                                else{
-//                                    user.sendEmailVerification();
-//                                    Toast.makeText(login.this, "Email sent to verification", Toast.LENGTH_SHORT).show();
-//                                }
-//
-//                                startActivity(new Intent(login.this, MainActivity.class));
-
+                                    finish();
                             } else {
                                 Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

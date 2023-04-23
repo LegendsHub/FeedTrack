@@ -36,6 +36,7 @@ ArrayList<exam_ese> c2=new ArrayList<>();
         super.onCreate(savedInstanceState);
         binding=ActivityFeedbackOptionsTBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
         String sub=getIntent().getStringExtra("sub");
         binding.weekly.setOnClickListener(new View.OnClickListener() {
             @Override

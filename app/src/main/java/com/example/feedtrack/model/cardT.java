@@ -1,7 +1,7 @@
 package com.example.feedtrack.model;
 
 public class cardT {
-    private String title;
+    public String title;
 
 
     public cardT(String title) {

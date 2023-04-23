@@ -47,7 +47,8 @@ public class Teachersem4 extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                  cardT c=snapshot.getValue(cardT.class);
-                    c.setTitle(snapshot.child("sub").child("fourth").getValue(String.class));
+                String subject=snapshot.child("sub").child("fourth").getValue(String.class);
+                    c.setTitle(subject);
                     cards.add(c);
 
                 adapter.notifyDataSetChanged();
