@@ -1,7 +1,6 @@
 package com.example.feedtrack.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.feedtrack.R;
 import com.example.feedtrack.adapter.cardAdapterT;
-import com.example.feedtrack.databinding.FragmentStudentBinding;
 import com.example.feedtrack.databinding.FragmentTeachersem4Binding;
-import com.example.feedtrack.model.ContactModel;
 import com.example.feedtrack.model.cardT;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

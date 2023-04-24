@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-  
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--THIS CODE IS FOR SIDE ANIMATION-->
+    <translate
+        android:duration="1500"
+        android:fromXDelta="-50%"
+        android:fromYDelta="0%" />
+
+    <alpha
+        android:duration="1500"
+        android:fromAlpha="0.1"
+        android:toAlpha="1.0" />
+    <rotate
+        android:toDegrees="360"
+        android:fromDegrees="0"
+
+        />
+
 </set>
